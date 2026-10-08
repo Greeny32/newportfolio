@@ -56,38 +56,41 @@ const texts_projects = document.getElementById("texts_projects");
 
 const project_image = document.getElementById("project_image");
 
-const projects = ["python", "html", "java", "sql", "typescript"];
-const projects_text = [python_txt, html_txt, java_text, sql_text, typescript_text];
+const f1_txt = "I created this in late 2023 using Python. It was my first time using Object Oriented Programming and API's. It renders graphs of F1 timings for every session and weekend in the season."
+
+const projects = ["f1"];
+const projects_text = [f1_txt];
 var pointer = 0;
 
 function p_left() {
     // lower pointer or reverse to other side
     if (pointer==0){
-        pointer = skills.length-1;
+        pointer = projects.length-1;
     }
     else {
         pointer -= 1;
     }
 
-    project_image.src = "img/"+skills[pointer]+".png";
+    project_image.src = "img/projects/"+projects[pointer]+".png";
     change_project_text();
 }
 
 function p_right() {
     // lower pointer or reverse to other side
-    if (pointer==skills.length-1){
+    if (pointer==projects.length-1){
         pointer = 0;
     }
     else {
         pointer += 1;
     }
 
-    project_image.src = "img/"+skills[pointer]+".png";
+    project_image.src = "img/projects/"+projects[pointer]+".png";
     change_project_text();
 }
 
 function change_project_text() {
-    texts_projects.innerHTML = pointer;
+    texts_projects.innerHTML = projects_text[pointer];
 }
 
-change_text()
+change_text();
+change_project_text();

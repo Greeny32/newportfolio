@@ -83,7 +83,14 @@ section {
     img {
         width: 15%;
     }
+
+    .project_image {
+        width: 50%;
+        height: auto;
+    }
 }
+
+
 
 .br {
     h2 {
@@ -98,8 +105,6 @@ section {
     display: flex;
     height: 65vh;
 }
-
-
 
 footer {
     height: auto;
