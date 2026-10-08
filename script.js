@@ -1,9 +1,19 @@
+// code to swap the buttons on the skills page.
+
 const btn_left = document.getElementById("left").addEventListener("click", left);
 const btn_right = document.getElementById("right").addEventListener("click", right);
+const text = document.getElementById("skills_text");
 
-const skill_image = document.getElementById("skill");
+const python_txt = "My best skill is <strong>Python</strong>. I have been programming using it for over 4 years and have created multiple pieces of coursework using it at both level 3 and level 4."
+const html_txt = "<strong>HTML</strong> was one of the first 'languages' I ever used. Since then we were taught it at level 4, and I have used it (alongside base JS and CSS) to create this website."
+const java_text = "I have a basic knowledge of <strong>Java</strong> after studying it in first-year."
+const sql_text = "I learned <strong>SQL</strong> and databases at both A-Level and level 4. It is one of my strongest areas."
+const typescript_text = "As I make this (October 2026) we are currently being taught <strong>Typescript</strong>. It is very similar to JS, which I am already good at. I will be making a project using this later in the semester."
 
-const skills = ["python", "html"];
+const skill_image = document.getElementById("img_skill");
+
+const skills = ["python", "html", "java", "sql", "typescript"];
+const skills_text = [python_txt, html_txt, java_text, sql_text, typescript_text];
 var pointer = 0;
 
 function left() {
@@ -15,7 +25,8 @@ function left() {
         pointer -= 1;
     }
 
-    skill_image.src = "images/"+skills[pointer]+".png";
+    skill_image.src = "img/"+skills[pointer]+".png";
+    change_text();
 }
 
 function right() {
@@ -27,5 +38,56 @@ function right() {
         pointer += 1;
     }
 
-    skill_image.src = "images/"+skills[pointer]+".png";
+    skill_image.src = "img/"+skills[pointer]+".png";
+    change_text()
 }
+
+function change_text() {
+    text.innerHTML = skills_text[pointer];
+}
+
+change_text()
+
+// Code to swap the image on the projects page. Very similar. Yes the variables are confusing...
+
+const btn_projects_left = document.getElementById("p_left").addEventListener("click", p_left);
+const btn_projects_right = document.getElementById("p_right").addEventListener("click", p_right);
+const texts_projects = document.getElementById("texts_projects");
+
+const project_image = document.getElementById("project_image");
+
+const projects = ["python", "html", "java", "sql", "typescript"];
+const projects_text = [python_txt, html_txt, java_text, sql_text, typescript_text];
+var pointer = 0;
+
+function p_left() {
+    // lower pointer or reverse to other side
+    if (pointer==0){
+        pointer = skills.length-1;
+    }
+    else {
+        pointer -= 1;
+    }
+
+    project_image.src = "img/"+skills[pointer]+".png";
+    change_project_text();
+}
+
+function p_right() {
+    // lower pointer or reverse to other side
+    if (pointer==skills.length-1){
+        pointer = 0;
+    }
+    else {
+        pointer += 1;
+    }
+
+    project_image.src = "img/"+skills[pointer]+".png";
+    change_project_text();
+}
+
+function change_project_text() {
+    texts_projects.innerHTML = pointer;
+}
+
+change_text()

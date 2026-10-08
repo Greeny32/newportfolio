@@ -67,6 +67,24 @@ section {
     border-color: #b9b8b8;
 }
 
+.skill {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+.image_swap {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    gap: 10px;
+    width: 100%;
+
+    img {
+        width: 15%;
+    }
+}
+
 .br {
     h2 {
         text-align: center;
@@ -119,7 +137,7 @@ footer {
     #projects {
         width: 100vw;
         height: 100vh;
-        text-align: center;
+
 
         h1 {
             font-size: 40px;
@@ -128,6 +146,23 @@ footer {
 
         h2 {
             font-size: 30px;
+        }
+    }
+
+    .skill {
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        padding: 10%;
+    }
+
+    .image_swap {
+        button {
+            padding: 10px;
+
+        }
+        img {
+            width: 25%;
         }
     }
 
